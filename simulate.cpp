@@ -7,7 +7,7 @@
 #include <cmath>
 #include <stdlib.h>
 #include <bits/stdc++.h>
-#include "correction00.hpp"
+#include "DiscLight.hpp"
 
 using namespace std;
 const int WIDTH = 1000;
