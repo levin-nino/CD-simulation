@@ -304,9 +304,10 @@ struct Disc{
         //TODO intensity
         
         int b1=(-1-sin(diffractincang))*d/lambda;
-        int b2=(1-sin(abs(diffractincang)))*d/lambda;
+        int b2=(1-sin(diffractincang))*d/lambda;
         
-        for (int order=min(b1,b2)-1;order<=max(b1,b2)+1;order++){
+        //this is physically inaccurate, but seems to work to add the bright arc around zero order reflection
+        for (int order=floor(min(b1,b2));order<=ceil(max(b1,b2));order++){
             if (abs((lambda*order/d+sin(diffractincang)))>1)continue;
             float intensityfactor;
             if (order==0)intensityfactor=1;
@@ -366,9 +367,9 @@ struct Disc{
             
             //TODO intensity
             int b1=(-1-sin(disdif))*d/lambda;
-            int b2=(1-sin(abs(disdif)))*d/lambda;
+            int b2=(1-sin(disdif))*d/lambda;
             float visible=0.0f;
-            for (int order=min(b1,b2)-1;order<=max(b1,b2)+1;order++){
+            for (int order=floor(min(b1,b2));order<=ceil(max(b1,b2));order++){
                 if (abs((lambda*order)/d+disdif)>1)continue;
                 float diffractoutang=asin((lambda*order)/d+disdif);//todo
                 float outgoingray[3]={dist(refracteddir[1], pcoutgoing[2])*tan(diffractoutang),refracteddir[1],pcoutgoing[2]};
