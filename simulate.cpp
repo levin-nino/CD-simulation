@@ -7,7 +7,7 @@
 #include <cmath>
 #include <stdlib.h>
 #include <bits/stdc++.h>
-#include "DiscLight.hpp"
+#include "correction00.hpp"
 
 using namespace std;
 const int WIDTH = 1000;
@@ -30,7 +30,7 @@ bool slomo=false;
 bool freeze=false;
 double timestep =0.00298598;
 int colors=20;
-int testsign=1;
+//int testsign=1;
 bool circleperspective=false;
 
 bool fixobserver=false;
@@ -226,6 +226,7 @@ void keyboard(unsigned char key, int x, int y){
         circlephase = asin(camdirection[2] * factor / circleradius);
         if (camdirection[0] < 0) circlephase = PI - circlephase;
 
+
         circlearound = !circlearound;
         if (circlearound)freeze = false;
     
@@ -305,23 +306,23 @@ void keyboard(unsigned char key, int x, int y){
         glutPostRedisplay();
     }
     else if (key == '3') {
-        pathx--;
-        std::cout << "pathx: " << pathx << "\n";
+        //pathx--;
+        //std::cout << "pathx: " << pathx << "\n";
         glutPostRedisplay();
     }
     else if (key == '4') {
-        pathx++;
-        std::cout << "pathx: " << pathx << "\n";
+        //pathx++;
+        //std::cout << "pathx: " << pathx << "\n";
         glutPostRedisplay();
     }
     else if (key == '5') {
-        pathy--;
-        std::cout << "pathy: " << pathy << "\n";
+        //pathy--;
+        //std::cout << "pathy: " << pathy << "\n";
         glutPostRedisplay();
     }
     else if (key == '6') {
-        pathy++;
-        std::cout << "pathy: " << pathy << "\n";
+        //pathy++;
+        //std::cout << "pathy: " << pathy << "\n";
         glutPostRedisplay();
     }
     else if (key == 'q') {
@@ -376,8 +377,8 @@ void keyboard(unsigned char key, int x, int y){
 
     }
     else if (key == '8') {
-        internaldiffract=!internaldiffract;
-        std::cout << "internaldiffract: " << internaldiffract <<"\n";
+        //internaldiffract=!internaldiffract;
+        //std::cout << "internaldiffract: " << internaldiffract <<"\n";
         glutPostRedisplay();
 
     }
